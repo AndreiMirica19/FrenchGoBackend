@@ -10,18 +10,15 @@ public func configure(_ app: Application) async throws {
 
     app.databases.use(.postgres(
         hostname: Environment.get("DATABASE_HOST") ?? "localhost",
-        port: Environment.get("DATABASE_PORT").flatMap(Int.init(_:)) ?? PostgresConfiguration.ianaPortNumber,
+        port: 5433,
         username: Environment.get("DATABASE_USERNAME") ?? "vapor_username",
         password: Environment.get("DATABASE_PASSWORD") ?? "vapor_password",
-        database: Environment.get("DATABASE_NAME") ?? "vapor_database"
+        database: Environment.get("DATABASE_NAME") ?? "FrenchGoDatabase"
     ), as: .psql)
 
-    app.migrations.add(CreateTodo())
-
-    app.views.use(.leaf)
-
-    
-
-    // register routes
+    app.migrations.add(CreateUser())
+    app.logger.logLevel = .debug
+    // 3
+    try app.autoMigrate().wait()
     try routes(app)
 }
