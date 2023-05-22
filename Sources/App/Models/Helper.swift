@@ -8,31 +8,36 @@
 import Foundation
 
 struct Helper {
-    var initalQuiz: Quiz
+    var initalQuiz: InitialQuiz
     
     init() {
-        var questions: [Question] = []
+        var questions: [InitialQuizQuestion] = []
         
-        questions.append(Question(questionText: "Qui ne veut pas dire ce qu'il pense ?", questionAswers: ["hypocrite", "sincère", "malhonnête"], rightAnswerIndex: 1))
+        questions.append(InitialQuizQuestion(questionText: "Qui ne veut pas dire ce qu'il pense ?", questionAswers: ["hypocrite", "sincère", "malhonnête"], rightAnswerIndex: 1, difficulty: Difficulty.easy.rawValue))
+        questions.append(InitialQuizQuestion(questionText: "Ensemble des mots d'une langue ?", questionAswers: ["alphabet", "grammaire", "vocabulaire"], rightAnswerIndex: 2, difficulty: Difficulty.easy.rawValue))
+        questions.append(InitialQuizQuestion(questionText: "Qui est difficile à comprendre ?", questionAswers: ["clair", "obscur", "évident"], rightAnswerIndex: 1, difficulty: Difficulty.easy.rawValue))
+        questions.append(InitialQuizQuestion(questionText: "Quel est le contraire d'ouvrir ?", questionAswers: ["fermer", "briser", "casser"], rightAnswerIndex: 0, difficulty: Difficulty.easy.rawValue))
+        questions.append(InitialQuizQuestion(questionText: "Endroit où l'on peut se baigner ?", questionAswers: ["plage", "montagne", "désert"], rightAnswerIndex: 0, difficulty: Difficulty.easy.rawValue))
+        questions.append(InitialQuizQuestion(questionText: "Quel est l'infinitif du verbe 'avais' ?", questionAswers: ["avoir", "être", "aller"], rightAnswerIndex: 0, difficulty: Difficulty.easy.rawValue))
         
-        questions.append(Question(questionText: "Ensemble des mots d'une langue ?", questionAswers: ["alphabet", "grammaire", "vocabulaire"], rightAnswerIndex: 2))
-        
-        questions.append(Question(questionText: "Qui est difficile à comprendre ?", questionAswers: ["clair", "obscur", "évident"], rightAnswerIndex: 1))
-        
-        questions.append(Question(questionText: "Endroit où l'on peut se baigner ?", questionAswers: ["plage", "montagne", "désert"], rightAnswerIndex: 0))
-        
-        questions.append(Question(questionText: "Si tu ___ de l'argent, tu pourrais acheter une nouvelle voiture.", questionAswers: ["avais", "aurais", "serais"], rightAnswerIndex: 1))
-        questions.append(Question(questionText: "Nous ___ à la plage hier.", questionAswers: ["sommes allés", "avons allé", "sommes allé"], rightAnswerIndex: 0))
-        questions.append(Question(questionText: "Vous ___ au concert hier soir.", questionAswers: ["êtes allé", "avez allé", "avez été"], rightAnswerIndex: 1))
-        questions.append(Question(questionText: "Je _____ un livre quand tu es arrivé.", questionAswers: ["lisais", "lisait", "lisai"], rightAnswerIndex: 0))
-        questions.append(Question(questionText: "Les élèves _____ beaucoup travaillé cette année.", questionAswers: ["ont", "ont été", "sont"], rightAnswerIndex: 0))
-        
-        questions.append(Question(questionText: "Quel est l'infinitif du verbe 'avais' ?", questionAswers: ["avoir", "être", "aller"], rightAnswerIndex: 0))
-        questions.append(Question(questionText: "Comment dit-on 'I am going to the cinema' en français ?", questionAswers: ["Je vais au cinéma", "J'ai été au cinéma", "Je suis allé au cinéma"], rightAnswerIndex: 0))
-        questions.append(Question(questionText: "Quel est le féminin de 'grand' ?", questionAswers: ["grande", "grandeur", "grandement"], rightAnswerIndex: 0))
-        questions.append(Question(questionText: "Quel est le pluriel de 'un chat' ?", questionAswers: ["des chats", "des chates", "des chatons"], rightAnswerIndex: 0))
-        
-        initalQuiz = Quiz(questions: questions)
+        questions.append(InitialQuizQuestion(questionText: "Si tu ___ de l'argent, tu pourrais acheter une nouvelle voiture.", questionAswers: ["avais", "aurais", "serais"], rightAnswerIndex: 1, difficulty: Difficulty.intermediate.rawValue))
+        questions.append(InitialQuizQuestion(questionText: "Nous ___ à la plage hier.", questionAswers: ["sommes allés", "avons allé", "sommes allé"], rightAnswerIndex: 0, difficulty: Difficulty.intermediate.rawValue))
+        questions.append(InitialQuizQuestion(questionText: "Vous ___ au concert hier soir.", questionAswers: ["êtes allé", "avez allé", "avez été"], rightAnswerIndex: 1, difficulty: Difficulty.intermediate.rawValue))
+        questions.append(InitialQuizQuestion(questionText: "Je _____ un livre quand tu es arrivé.", questionAswers: ["lisais", "lisait", "lisai"], rightAnswerIndex: 0, difficulty: Difficulty.intermediate.rawValue))
+        questions.append(InitialQuizQuestion(questionText: "Les élèves _____ beaucoup travaillé cette année.", questionAswers: ["ont", "ont été", "sont"], rightAnswerIndex: 0, difficulty: Difficulty.intermediate.rawValue))
+        questions.append(InitialQuizQuestion(questionText: "Qu'est-ce que le conditionnel présent du verbe 'aller' ?", questionAswers: ["irais", "allais", "va"], rightAnswerIndex: 0, difficulty: Difficulty.intermediate.rawValue))
+
+        questions.append(InitialQuizQuestion(questionText: "Quel est le nom de la figure de style qui consiste à juxtaposer des mots ou des groupes de mots de longueur grammaticale équivalente ?", questionAswers: ["paronomase", "chiasme", "anacoluthe"], rightAnswerIndex: 1, difficulty: Difficulty.hard.rawValue))
+
+        questions.append(InitialQuizQuestion(questionText: "Dans la phrase 'Je l'ai vu hier', quel est le rôle grammatical de 'l' ?", questionAswers: ["pronom relatif", "pronom personnel complément", "pronom indéfini"], rightAnswerIndex: 1, difficulty: Difficulty.hard.rawValue))
+
+        questions.append(InitialQuizQuestion(questionText: "Quelle est la différence entre la voix active et la voix passive en grammaire ?", questionAswers: ["La voix active met l'accent sur l'action, tandis que la voix passive met l'accent sur le sujet qui subit l'action.", "La voix active utilise le présent de l'indicatif, tandis que la voix passive utilise le passé composé.", "La voix active est utilisée à l'oral, tandis que la voix passive est utilisée à l'écrit."], rightAnswerIndex: 0, difficulty: Difficulty.hard.rawValue))
+
+        questions.append(InitialQuizQuestion(questionText: "Quelle est la différence entre un adjectif qualificatif et un adverbe ?", questionAswers: ["Un adjectif qualificatif décrit un nom, tandis qu'un adverbe modifie un verbe, un adjectif ou un autre adverbe.", "Un adjectif qualificatif se place avant le nom, tandis qu'un adverbe se place après le verbe.", "Un adjectif qualificatif est invariable, tandis qu'un adverbe peut varier en genre et en nombre."], rightAnswerIndex: 0, difficulty: Difficulty.hard.rawValue))
+
+        questions.append(InitialQuizQuestion(questionText: "Qu'est-ce qu'une proposition subordonnée relative ?", questionAswers: ["Une proposition subordonnée relative est une proposition qui complète le sens d'un nom ou d'un pronom dans une phrase principale.", "Une proposition subordonnée relative est une proposition qui indique une condition ou une hypothèse dans une phrase.", "Une proposition subordonnée relative est une proposition qui exprime une cause ou une conséquence dans une phrase."], rightAnswerIndex: 0, difficulty: Difficulty.hard.rawValue))
+
+        initalQuiz = InitialQuiz(questions: questions)
     }
     
     func beginnerCourse() -> Course {

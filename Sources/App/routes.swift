@@ -161,7 +161,7 @@ func routes(_ app: Application) throws {
             }
     }
     
-    app.get("initialQuiz") { req -> EventLoopFuture<Quiz> in
+    app.get("initialQuiz") { req -> EventLoopFuture<InitialQuiz> in
         let helper = Helper()
         return req.eventLoop.makeSucceededFuture(helper.initalQuiz)
     }

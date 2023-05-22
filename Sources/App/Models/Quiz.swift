@@ -17,3 +17,20 @@ struct Question: Content {
     var questionAswers: [String]
     var rightAnswerIndex: Int
 }
+
+struct InitialQuiz: Content {
+    var questions: [InitialQuizQuestion]
+}
+
+struct InitialQuizQuestion: Content {
+    var questionText: String
+    var questionAswers: [String]
+    var rightAnswerIndex: Int
+    var difficulty: String
+}
+
+enum Difficulty: String {
+    case easy
+    case intermediate
+    case hard
+}
